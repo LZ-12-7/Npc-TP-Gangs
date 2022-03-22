@@ -33,7 +33,7 @@ Citizen.CreateThread(function()
         local PPos = GetEntityCoords(Player)
         Citizen.Wait(0)
             if #(PPos - vector3(250.1927, -789.9937, 29.42893)) < 3 then
-                DrawText3D(250.1927, -789.9937, 30.42893 +1, "Pulsa ~y~[E]~w~ para iniciar la misión")
+                DrawText3D(250.1927, -789.9937, 30.42893 +1, "Pulsa ~y~[E]~w~ para abrir el Menú de TP a barrios")
                 if IsControlJustPressed(1, Keys['E']) then
                 openMenu()
             end
