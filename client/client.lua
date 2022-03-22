@@ -86,22 +86,22 @@ ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'NpcTPGangs',{
 function(data, menu)
         if data.current.value == 'barrioballas' then
         ESX.Game.Teleport(PlayerPedId(), {x=98.81587, y=-1951.69, z=20.662, heading=334.90}, function()
-        TriggerEvent('chatMessage', 'Menú de TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los ballas con exito!')
+        TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los ballas con exito!')
         menu.close()
     end)
         elseif data.current.value == 'barriowhitefamilies' then
         ESX.Game.Teleport(PlayerPedId(), {x=471.3062, y=-1567.06, z=29.282, heading=226.509}, function()
-     TriggerEvent('chatMessage', 'Menú de TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los whitefamilies con exito!')
+     TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los whitefamilies con exito!')
      menu.close()
         end)
     elseif data.current.value == 'barriofamilies' then
     ESX.Game.Teleport(PlayerPedId(), {x=-103.614, y=-1593.16, z=31.503, heading=314.816}, function()
-        TriggerEvent('chatMessage', 'Menú de TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los families con exito!')
+        TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los families con exito!')
         menu.close()
     end)
 elseif data.current.value == 'barriovagos' then
     ESX.Game.Teleport(PlayerPedId(), {x=1381.261, y=-581.868, z=74.374, heading=75.37}, function()
-        TriggerEvent('chatMessage', 'Menú de TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los vagos con exito!')
+        TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los vagos con exito!')
         menu.close()
     end)
     end
