@@ -4,4 +4,5 @@ author 'LZ#0001'
 
 client_scripts {
     "client/client.lua",
+    "config.lua",
 }
