@@ -28,12 +28,13 @@ Citizen.CreateThread(function()
     ped = CreatePed("PED_TYPE_CIVFEMALE", "a_m_m_soucent_01", 250.1927, -789.9937, 29.42893, 73.311363220215, false, true)
     SetBlockingOfNonTemporaryEvents(ped, true)
     FreezeEntityPosition(ped, true)
+    SetEntityInvincible(ped, true)
     while true do
         local Player = PlayerPedId()
         local PPos = GetEntityCoords(Player)
         Citizen.Wait(0)
             if #(PPos - vector3(250.1927, -789.9937, 29.42893)) < 3 then
-                DrawText3D(250.1927, -789.9937, 30.42893 +1, "Pulsa ~y~[E]~w~ para abrir el Menú de TP a barrios")
+                DrawText3D(Config.TextPos +1, "Pulsa ~y~[E]~w~ para abrir el Menú de TP a barrios")
                 if IsControlJustPressed(1, Keys['E']) then
                 openMenu()
             end
