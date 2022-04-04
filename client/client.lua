@@ -20,25 +20,26 @@ Keys = {
 }
 
 Citizen.CreateThread(function()
-    local hash = GetHashKey("a_m_m_soucent_01")
-    while not HasModelLoaded(hash) do
-    RequestModel(hash)
-    Wait(20)
-    end
-    ped = CreatePed("PED_TYPE_CIVFEMALE", "a_m_m_soucent_01", 250.1927, -789.9937, 29.42893, 73.311363220215, false, true)
-    SetBlockingOfNonTemporaryEvents(ped, true)
-    FreezeEntityPosition(ped, true)
-    SetEntityInvincible(ped, true)
-    while true do
-        local Player = PlayerPedId()
-        local PPos = GetEntityCoords(Player)
-        Citizen.Wait(0)
-            if #(PPos - vector3(250.1927, -789.9937, 29.42893)) < 3 then
-                DrawText3D(Config.TextPos +1, "Pulsa ~y~[E]~w~ para abrir el Menú de TP a barrios")
-                if IsControlJustPressed(1, Keys['E']) then
-                openMenu()
+                local hash = GetHashKey("a_m_m_soucent_01")
+            while not HasModelLoaded(hash) do
+            RequestModel(hash)
+            Wait(20)
             end
-        end
+            ped = CreatePed("PED_TYPE_CIVFEMALE", "a_m_m_soucent_01", 250.1927, -789.9937, 29.42893, 73.311363220215, false, true)
+            SetBlockingOfNonTemporaryEvents(ped, true)
+            FreezeEntityPosition(ped, true)
+    while true do
+                    local Player = PlayerPedId()
+                    local PPos = GetEntityCoords(Player)
+                    local _s = 1000
+                    if #(PPos - vector3(250.1927, -789.9937, 29.42893)) < 3 then
+                        _s = 0
+                        DrawText3D(250.1927, -789.9937, 30.42893 +1, "Pulsa ~y~[E]~w~ para abrir el Menú de TP a barrios")
+                        if IsControlJustPressed(1, Keys['E']) then
+                            openMenu()
+                    end
+            end
+        Citizen.Wait(_s)
     end
 end)
 
@@ -74,7 +75,7 @@ function openMenu()
     {label = 'Barrio Ballas', value = 'barrioballas'},
     {label = 'Barrio Families', value = 'barriofamilies'},
     {label = 'Barrio White Families', value = 'barriowhitefamilies'},
-    {label = 'vagos', value = 'barriovagos'},
+    {label = 'Barrio Vagos', value = 'barriovagos'},
 }
 
 ESX.UI.Menu.CloseAll()
@@ -87,22 +88,22 @@ ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'NpcTPGangs',{
 function(data, menu)
         if data.current.value == 'barrioballas' then
         ESX.Game.Teleport(PlayerPedId(), {x=98.81587, y=-1951.69, z=20.662, heading=334.90}, function()
-        TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los ballas con exito!')
+        TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, (_U('ballas_message')))
         menu.close()
     end)
         elseif data.current.value == 'barriowhitefamilies' then
         ESX.Game.Teleport(PlayerPedId(), {x=471.3062, y=-1567.06, z=29.282, heading=226.509}, function()
-     TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los whitefamilies con exito!')
+     TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, (_U('whitefamilies_message')))
      menu.close()
         end)
     elseif data.current.value == 'barriofamilies' then
     ESX.Game.Teleport(PlayerPedId(), {x=-103.614, y=-1593.16, z=31.503, heading=314.816}, function()
-        TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los families con exito!')
+        TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, (_U('families_message')))
         menu.close()
     end)
 elseif data.current.value == 'barriovagos' then
     ESX.Game.Teleport(PlayerPedId(), {x=1381.261, y=-581.868, z=74.374, heading=75.37}, function()
-        TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, 'Has sido Tpeado al barrio de los vagos con exito!')
+        TriggerEvent('chatMessage', 'TP a barrios', {255, 0, 0}, (_U('vagos_message')))
         menu.close()
     end)
     end
