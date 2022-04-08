@@ -1,7 +1,7 @@
-ESX = nil
-
 local Player = PlayerPedId()
 local PPos = GetEntityCoords(Player)
+
+ESX = nil
 
 Citizen.CreateThread(function()
     while ESX == nil do
@@ -33,10 +33,12 @@ Citizen.CreateThread(function()
             SetBlockingOfNonTemporaryEvents(ped, true)
             FreezeEntityPosition(ped, true)
     while true do
+        local Player = PlayerPedId()
+        local PPos = GetEntityCoords(Player)
                     local _s = 1000
-                    if #(PPos - vector3(250.1927, -789.9937, 30.42893)) < 3 then
+                    if #(PPos - vector3(250.6839, -790.143, 29.423)) < 3 then
                         _s = 0
-                        DrawText3D(250.6839, -790.143, 29.423 +2, "Pulsa ~y~[E]~w~ para abrir el Menú de TP a barrios")
+                        DrawText3D(250.6839, -790.143, 30.423 +1, "Pulsa ~y~[E]~w~ para abrir el Menú de TP a barrios")
                         if IsControlJustPressed(1, Keys['E']) then
                             openMenu()
                     end
