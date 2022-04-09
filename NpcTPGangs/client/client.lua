@@ -32,6 +32,7 @@ Citizen.CreateThread(function()
             ped = CreatePed("PED_TYPE_CIVFEMALE", "a_m_m_soucent_01", coords, false, true)
             SetBlockingOfNonTemporaryEvents(ped, true)
             FreezeEntityPosition(ped, true)
+	    SetEntityInvincible(ped, true)
     while true do
         local Player = PlayerPedId()
         local PPos = GetEntityCoords(Player)
