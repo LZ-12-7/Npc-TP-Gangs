@@ -92,22 +92,22 @@ ESX.UI.Menu.Open('default', GetCurrentResourceName(), 'NpcTPGangs',{
 },
 function(data, menu)
         if data.current.value == 'barrioballas' then
-        ESX.Game.Teleport(Player, {x=98.81587, y=-1951.69, z=21.662, heading=334.90}, function()
+        ESX.Game.Teleport(PlayerPedId(), {x=98.81587, y=-1951.69, z=21.662, heading=334.90}, function()
         TriggerEvent('chatMessage', '[TP a barrios]', {255, 0, 0}, (_U('ballas_message')))
         menu.close()
     end)
         elseif data.current.value == 'barriowhitefamilies' then
-        ESX.Game.Teleport(Player, {x=471.3062, y=-1567.06, z=30.282, heading=226.509}, function()
+        ESX.Game.Teleport(PlayerPedId(), {x=471.3062, y=-1567.06, z=30.282, heading=226.509}, function()
      TriggerEvent('chatMessage', '[TP a barrios]', {255, 0, 0}, (_U('whitefamilies_message')))
      menu.close()
         end)
     elseif data.current.value == 'barriofamilies' then
-    ESX.Game.Teleport(Player, {x=-103.614, y=-1593.16, z=32.503, heading=314.816}, function()
+    ESX.Game.Teleport(PlayerPedId(), {x=-103.614, y=-1593.16, z=32.503, heading=314.816}, function()
         TriggerEvent('chatMessage', '[TP a barrios]', {255, 0, 0}, (_U('families_message')))
         menu.close()
     end)
 elseif data.current.value == 'barriovagos' then
-    ESX.Game.Teleport(Player, {x=1381.261, y=-581.868, z=75.374, heading=75.37}, function()
+    ESX.Game.Teleport(PlayerPedId(), {x=1381.261, y=-581.868, z=75.374, heading=75.37}, function()
         TriggerEvent('chatMessage', '[TP a barrios]', {255, 0, 0}, (_U('vagos_message')))
         menu.close()
     end)
