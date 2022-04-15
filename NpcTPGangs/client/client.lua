@@ -1,6 +1,3 @@
-local Player = PlayerPedId()
-local PPos = GetEntityCoords(Player)
-
 ESX = nil
 
 Citizen.CreateThread(function()
